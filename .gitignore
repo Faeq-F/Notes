@@ -1,0 +1,12 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!*.tex
+!*.cls
+!*.png
+!settings.json
+
+# even if they are in subdirs
+!*/
