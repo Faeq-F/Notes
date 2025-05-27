@@ -1,7 +1,7 @@
 \documentclass[]{project_plan}
 \usepackage{graphicx}
 \usepackage{hyperref}
-\usepackage{cite, float, xcolor}
+\usepackage{cite, float, xcolor, highlightx, afterpage}
 
 \newcommand{\bulletPoint}{\hspace{-3.1pt}$\bullet$ \hspace{5pt}}
 \setcounter{tocdepth}{7}
@@ -10,12 +10,7 @@
 \def\studentname{Faeq Faisal}
 \def\projecttitle{IT Project Management}
 
-\definecolor{shadecolor}{RGB}{220,220,220}
-
-\newcommand{\notincluded}[1]{\par\noindent\colorbox{shadecolor}
-{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{#1}}}
-
-
+\definecolor{shadecolor}{RGB}{200,200,200}
 
 %---
 
@@ -26,8 +21,13 @@
 Part 10 of the module, "Project Manager Skills, Profession and Code of Ethics",
 is not examinable. Notes for this part were not made.
 
-% Anything mentioned within the last lecture as 'not examined' has
-% a \notincluded{\textsc{background like this}}
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
+    Anything mentioned within the last lecture as 'ignorable' has
+    a background like this
+  \end{minipage}}%
+
+% \HighlightText*[bg=green]{hello\\there}
 
 \begin{itemize}
   \item Project Management Fundamentals
@@ -286,12 +286,15 @@ like insurance, gas, parking spaces, etc.
 
 The cost of operation is \colorbox{pink}{normally for 5 years}, 10 years if it is a larger system
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=\linewidth]{TCO.png}
-\end{figure}
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=\linewidth]{TCO.png}
+    \end{figure}
 
-(dashes (-) in red are costs that are a part of the TCO for a system)
+    (dashes (-) in red are costs that are a part of the TCO for a system)
+  \end{minipage}}%
 
 The \colorbox{yellow}{users} of some software \colorbox{yellow}{see} something that is generally called the '\colorbox{green}{Information system}'.
 The user is \colorbox{yellow}{doing some task}, and the \colorbox{yellow}{system supports this task}, e.g., ticket booking on a website.
@@ -302,32 +305,42 @@ what the end user sees.
 \newpage
 
 \colorbox{cyan}{Main Acquisition} Cost (CAPEX) \colorbox{cyan}{elements}:\\
-\bulletPoint \colorbox{yellow}{S/W licenses}\\
-i. Application SW licenses\\
-ii. Software Technology related licenses\\
-\bulletPoint \colorbox{yellow}{H/W} Technology (e.g. servers, storage, workstations, appliances)\\
-\bulletPoint \colorbox{yellow}{Telecommunications} Technology and Lines\\
-\bulletPoint Acquisition \colorbox{yellow}{research}/decision/procurement costs\\
-\bulletPoint Implementation/\colorbox{yellow}{Installation} Services\\
-\bulletPoint \colorbox{yellow}{Development} and Customization Services\\
-\bulletPoint \colorbox{yellow}{Integration} Services\\
-\bulletPoint \colorbox{yellow}{Testing}\\
-\bulletPoint \colorbox{yellow}{Consulting}\\
-\bulletPoint \colorbox{yellow}{Training}\\
-\bulletPoint \colorbox{yellow}{Travel}
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
+    \bulletPoint \colorbox{yellow}{S/W licenses}\\
+    i. Application SW licenses\\
+    ii. Software Technology related licenses\\
+    \bulletPoint \colorbox{yellow}{H/W} Technology (e.g. servers, storage, workstations, appliances)\\
+    \bulletPoint \colorbox{yellow}{Telecommunications} Technology and Lines\\
+    \bulletPoint Acquisition \colorbox{yellow}{research}/decision/procurement costs\\
+    \bulletPoint Implementation/\colorbox{yellow}{Installation} Services\\
+    \bulletPoint \colorbox{yellow}{Development} and Customization Services\\
+    \bulletPoint \colorbox{yellow}{Integration} Services\\
+    \bulletPoint \colorbox{yellow}{Testing}\\
+    \bulletPoint \colorbox{yellow}{Consulting}\\
+    \bulletPoint \colorbox{yellow}{Training}\\
+    \bulletPoint \colorbox{yellow}{Travel}
+  \end{minipage}}
+
+
 
 \colorbox{cyan}{Main Operation} Cost (OPEX) \colorbox{cyan}{elements}:\\
-\bulletPoint \colorbox{yellow}{S/W maintenance}\\
-i. Application SW\\
-ii. Software Technology related\\
-iii. Development/Customizations maintenance\\
-e.g., Redhat maintenance, version updates, etc.\\
-\bulletPoint \colorbox{yellow}{H/W} Technology \colorbox{yellow}{maintenance}\\
-Usually around 10\% of the acquisition fee\\
-\bulletPoint \colorbox{yellow}{Telecommunications} Technology and Lines\\
-\bulletPoint \colorbox{yellow}{Recurring} Data Center \colorbox{yellow}{Costs}, e.g. floorspace, electricity\\
-\bulletPoint \colorbox{yellow}{Recurring Operations} Costs e.g. backups, patches.\\
-\bulletPoint \colorbox{yellow}{Training}
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
+    \bulletPoint \colorbox{yellow}{S/W maintenance}\\
+    i. Application SW\\
+    ii. Software Technology related\\
+    iii. Development/Customizations maintenance\\
+    e.g., Redhat maintenance, version updates, etc.\\
+    \bulletPoint \colorbox{yellow}{H/W} Technology \colorbox{yellow}{maintenance}\\
+    Usually around 10\% of the acquisition fee\\
+    \bulletPoint \colorbox{yellow}{Telecommunications} Technology and Lines\\
+    \bulletPoint \colorbox{yellow}{Recurring} Data Center \colorbox{yellow}{Costs}, e.g. floorspace, electricity\\
+    \bulletPoint \colorbox{yellow}{Recurring Operations} Costs e.g. backups, patches.\\
+    \bulletPoint \colorbox{yellow}{Training}
+  \end{minipage}}
+
+
 
 \colorbox{pink}{Some costs should be considered \textbf{per} target environment},\\ i.e. Live/Production,
 Disaster, Testing, Development
@@ -388,20 +401,29 @@ NPV is the \colorbox{yellow}{sum of all} terms $A_t / (1 + r)^t$ , where,\\
 \bulletPoint $r$: the discount rate\\
 \bulletPoint $A_t$ :the net cash flow (inflow minus outflow) at time $t$
 
-$$NPV = \sum_{t=0....n} A_t / (1 + r)^t$$
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
+    $$NPV = \sum_{t=0....n} A_t / (1 + r)^t$$
+  \end{minipage}}
+
 
 NPV \colorbox{pink}{can be used} as a basis for \textbf{\colorbox{pink}{comparison} across investments} (i.e., will I invest in projectA or projectB) and bringing everything in \colorbox{pink}{today's terms}.
 
 \newpage
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=\linewidth]{npv_example.png}
-\end{figure}
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=\linewidth]{npv_example.png}
+    \end{figure}
 
-So if we are estimating here that we will get £1,775,000 after 10 years,
-we will actually be getting £844,308 (since that is what that amount is worth,
-10 years in the future)
+    So if we are estimating here that we will get £1,775,000 after 10 years,
+    we will actually be getting £844,308 (since that is what that amount is worth,
+    10 years in the future)
+  \end{minipage}}
+
+
 
 \subsection{Project Cost Estimation and Budgeting}
 \colorbox{cyan}{Types of cost estimates}:
@@ -432,31 +454,36 @@ $E = (4 * MP + O + P) / 6$
 
 \colorbox{pink}{Estimation of software development is the most difficult task} since everything else has set prices (hosting, hardware, etc.)
 
-\subsubsection{Important Rules of Thumb / Checklist}
-\begin{enumerate}
-  \item In your estimation deliverable, explicitly state the underlying \textbf{Scope / Details} and any applicable \textbf{Assumptions} and \textbf{Rationale}.
-  \item \textbf{Be honest!}
-  \item \textbf{Do not do it alone}, i.e. do not tell people how long it will take them to do their work! Gain team and subcontractors
-        consensus before you deliver your estimate.
-  \item \textbf{Use historical information}, but adjust accordingly. Hence, \textbf{keep quality cost records of past projects!}
-  \item Use a \textbf{combination} of \textbf{both methods} and \textbf{people} to estimate.
-  \item Distinguish \textbf{Effort Vs Duration} (FTEs Vs Calendar days). In the latter, do not forget holidays!
-  \item Be aware of the \textbf{organizational rules on effort/costs} (e.g. taxes (VAT), labour unit costs, mdays/hours, working days)
-  \item Be aware of the \textbf{organizational rules on controls/required deliverables}, e.g. security checks, legal checks, preparation of
-        manuals, training. These will imply additional tasks/effort.
-  \item Adjust estimates for \textbf{loading factors} (e.g. multiple groups involved, remote locations, traveling, culture/language barriers)
-  \item Include \textbf{reasonable Reserves} (for unanticipated/changing circumstances). Unreasonable reserves have impact (why?)
-  \item Do not forget effort to: (i) gather detailed, agreed requirements, (ii) test (all types of testing), (iii) setup system in different
-        environments (and have test data available), (iv) number and complexity of interfaces to other systems.
-  \item \textbf{Human beings are biased towards underestimation}. Do not be too optimistic based on your own abilities. We also have anchoring
-        bias - we \textbf{rely too heavily on the first piece of information we recieve}. This effects both the first estimate (wrong estimate from
-        an expert sticks, and you ignore others) and when estimates go wrong (you tell your manager you need an extra 5 days but
-        they still see it as being done in the original time-frame).
-  \item If \textbf{imposed with infeasible deadlines and budget from management, do not merely accept! Negotiate focusing on the
-          equilibrium of scope/time/quality/cost (rather than cost alone)!} Moreover, be cautious on initial estimates as management
-        never forget these, but rarely remember subsequent changes/adjustments. Keep them informed formally and keep records.
-        \textbf{Be prepared to be challenged on your estimates, hence make sure they are defensible!}
-\end{enumerate}
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
+
+    \subsubsection{Important Rules of Thumb / Checklist}
+    \begin{enumerate}
+      \item In your estimation deliverable, explicitly state the underlying \textbf{Scope / Details} and any applicable \textbf{Assumptions} and \textbf{Rationale}.
+      \item \textbf{Be honest!}
+      \item \textbf{Do not do it alone}, i.e. do not tell people how long it will take them to do their work! Gain team and subcontractors
+            consensus before you deliver your estimate.
+      \item \textbf{Use historical information}, but adjust accordingly. Hence, \textbf{keep quality cost records of past projects!}
+      \item Use a \textbf{combination} of \textbf{both methods} and \textbf{people} to estimate.
+      \item Distinguish \textbf{Effort Vs Duration} (FTEs Vs Calendar days). In the latter, do not forget holidays!
+      \item Be aware of the \textbf{organizational rules on effort/costs} (e.g. taxes (VAT), labour unit costs, mdays/hours, working days)
+      \item Be aware of the \textbf{organizational rules on controls/required deliverables}, e.g. security checks, legal checks, preparation of
+            manuals, training. These will imply additional tasks/effort.
+      \item Adjust estimates for \textbf{loading factors} (e.g. multiple groups involved, remote locations, traveling, culture/language barriers)
+      \item Include \textbf{reasonable Reserves} (for unanticipated/changing circumstances). Unreasonable reserves have impact (why?)
+      \item Do not forget effort to: (i) gather detailed, agreed requirements, (ii) test (all types of testing), (iii) setup system in different
+            environments (and have test data available), (iv) number and complexity of interfaces to other systems.
+      \item \textbf{Human beings are biased towards underestimation}. Do not be too optimistic based on your own abilities. We also have anchoring
+            bias - we \textbf{rely too heavily on the first piece of information we recieve}. This effects both the first estimate (wrong estimate from
+            an expert sticks, and you ignore others) and when estimates go wrong (you tell your manager you need an extra 5 days but
+            they still see it as being done in the original time-frame).
+      \item If \textbf{imposed with infeasible deadlines and budget from management, do not merely accept! Negotiate focusing on the
+              equilibrium of scope/time/quality/cost (rather than cost alone)!} Moreover, be cautious on initial estimates as management
+            never forget these, but rarely remember subsequent changes/adjustments. Keep them informed formally and keep records.
+            \textbf{Be prepared to be challenged on your estimates, hence make sure they are defensible!}
+    \end{enumerate}
+
+  \end{minipage}}
 
 \subsubsection{Project Budget}
 
@@ -639,12 +666,15 @@ the \colorbox{yellow}{description of work required} for the procurement or as pa
 A scope document with sufficient level of detail, clarity and non-ambiguity are
 critical factors.
 
-The SOW describes the \colorbox{yellow}{scope} of work, describing the capabilities of the
-deliverable, what the end deliverable actually is (doesn't only need
-to be software, e.g., manuals), the \colorbox{yellow}{schedule} of the
-deliverables, \colorbox{yellow}{standards} that need to be followed,
-how the organization will accept the deliverable, etc. e.g., location of
-work (if they are providing people)
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
+    The SOW describes the \colorbox{yellow}{scope} of work, describing the capabilities of the
+    deliverable, what the end deliverable actually is (doesn't only need
+    to be software, e.g., manuals), the \colorbox{yellow}{schedule} of the
+    deliverables, \colorbox{yellow}{standards} that need to be followed,
+    how the organization will accept the deliverable, etc. e.g., location of
+    work (if they are providing people)
+  \end{minipage}}
 
 The SOW \colorbox{pink}{tends to be part of the contract} for the project.
 \colorbox{pink}{Sometimes} a project \colorbox{pink}{can start} \colorbox{pink}{without the contract} as the contract takes
@@ -654,22 +684,26 @@ time to finalize with, for e.g., lawyers, and \colorbox{pink}{other documents ar
 
 \newpage
 
-Main \colorbox{cyan}{Types of Contracts}:
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
+    Main \colorbox{cyan}{Types of Contracts}:
 
-\colorbox{green}{Fixed Price} (Lump Sum)\\
-\bulletPoint \colorbox{yellow}{Fixed scope} - risk - negotiations with the vendor\\
-\bulletPoint \colorbox{yellow}{Fixed Total Cost} Vs Fixed Unit Price\\
-\bulletPoint with / without incentive\\
-\bulletPoint with \colorbox{yellow}{price adjustment}
+    \colorbox{green}{Fixed Price} (Lump Sum)\\
+    \bulletPoint \colorbox{yellow}{Fixed scope} - risk - negotiations with the vendor\\
+    \bulletPoint \colorbox{yellow}{Fixed Total Cost} Vs Fixed Unit Price\\
+    \bulletPoint with / without incentive\\
+    \bulletPoint with \colorbox{yellow}{price adjustment}
 
-\colorbox{green}{Cost-reimbursable} (aka Cost-Plus)\\
-\colorbox{yellow}{Vendor agrees on the FTE}, the cost of the FTE and the profit on top of that cost (people are still payed for the real work time)\\
-\bulletPoint Cost plus IncentiveFee (CPIF)\\
-\bulletPoint Cost plus Fixed Fee (CPFF)\\
-\bulletPoint Cost Plus Award Fee(CPAF)\\
-\bulletPoint Cost Plus Percentage of Costs (CPPC)
+    \colorbox{green}{Cost-reimbursable} (aka Cost-Plus)\\
+    \colorbox{yellow}{Vendor agrees on the FTE}, the cost of the FTE and the profit on top of that cost (people are still payed for the real work time)\\
+    \bulletPoint Cost plus IncentiveFee (CPIF)\\
+    \bulletPoint Cost plus Fixed Fee (CPFF)\\
+    \bulletPoint Cost Plus Award Fee(CPAF)\\
+    \bulletPoint Cost Plus Percentage of Costs (CPPC)
 
-Time and Material (T\&M)
+    Time and Material (T\&M)
+
+  \end{minipage}}
 
 \chapter{Project Initiation and (Initial) Planning}
 Initiation tends to be a very critical stage, while being short in duration
@@ -678,13 +712,16 @@ Initiation tends to be a very critical stage, while being short in duration
 Stakeholder: Any party who is interested in, or affected by the outcome of the project.\\
 e.g., departments, individuals, etc.
 
-The Project governance structure:
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=\linewidth]{project_governance_structure.png}
-\end{figure}
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
+    The Project governance structure:
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=\linewidth]{project_governance_structure.png}
+    \end{figure}
 
-(Everyone not in an oval with a solid border is a stakeholder)
+    (Everyone not in an oval with a solid border is a stakeholder)
+  \end{minipage}}
 
 \subsection{Stakeholder analysis}
 \bulletPoint Who gets the output?\\
@@ -710,11 +747,20 @@ Goal: to increase their support throughout the project\\
 \bulletPoint Ask the Questions; Do they care?, Should they care?, Do we want them to care?\\
 \bulletPoint Develop stakeholder assessment grid, e.g. a Power/Interest grid or a Power/Importance grid
 
-\begin{figure}[h!]
+\begin{figure}[H]
   \centering
   \includegraphics[width=.6\linewidth]{stakeholder_assessment_grid.png}
-  \includegraphics[width=\linewidth]{stakeholder_register.png}
 \end{figure}
+
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=\linewidth]{stakeholder_register.png}
+    \end{figure}
+  \end{minipage}}
+
+
 
 \subsection{The project governance structure}
 Essentially, the project steering committee (decision makers - they steer the project)
@@ -766,12 +812,14 @@ after planning, becomes a Project Initiation Document (PID) artefact.
 
 Project Kick-Off Meeting takes place upon finalization of the Project Charter (The day the project officially starts - Everyone should be there; the project manager delivers a presentation so that everyone is aligned)
 
-\section{Common Pitfalls and Best Practices}
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=\linewidth]{project_initiation_common_pitfalls.png}
-\end{figure}
-
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
+    \section{Common Pitfalls and Best Practices}
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=\linewidth]{project_initiation_common_pitfalls.png}
+    \end{figure}
+  \end{minipage}}
 
 \chapter{The first/basic Project Planning Elements: Scope, Time, Resources, Communications.}
 
@@ -807,17 +855,20 @@ Analysts try to map an interface between a customer and developer
 
 \newpage
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=\linewidth]{requirements_document.png}
-\end{figure}
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=\linewidth]{requirements_document.png}
+    \end{figure}
 
-Context diagram to show high-level scope:
+    Context diagram to show high-level scope:
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=35em]{scope_context_diagram.png}
-\end{figure}
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=35em]{scope_context_diagram.png}
+    \end{figure}
+  \end{minipage}}
 
 \newpage
 
@@ -1040,31 +1091,34 @@ Common Options typically applied to accelerate (crash) a Project\\
 
 \section{Resources}
 
-Plan for the resources that are required to successfully carry out the project
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
 
-Main Types of Resources:\\
-\bulletPoint People, with specific Skills -> who will do what?\\
-\bulletPoint Equipment (incl. all elements of the HW infrastructure),\\
-\bulletPoint Software Infrastructure and Tools,\\
-\bulletPoint Facilities (e.g. Space)
+    Plan for the resources that are required to successfully carry out the project
 
-Primary Inputs:\\
-\bulletPoint The activity list and corresponding resource requirements\\(e.g. skills, infrastructure, tools, equipment)\\
-\bulletPoint The Project Stakeholders Analysis and Governance Structure and Roles\\
-\bulletPoint Resources’ Availability\\
-\bulletPoint Trade-off between tasks Time and Resources (an iterative process)\\
-\bulletPoint Personalities, Experience, Group Dynamics, People Growth\\
-\bulletPoint Related Risks
+    Main Types of Resources:\\
+    \bulletPoint People, with specific Skills -> who will do what?\\
+    \bulletPoint Equipment (incl. all elements of the HW infrastructure),\\
+    \bulletPoint Software Infrastructure and Tools,\\
+    \bulletPoint Facilities (e.g. Space)
 
-Key Question: How will I get the best resources and use who I have as best as I can?
+    Primary Inputs:\\
+    \bulletPoint The activity list and corresponding resource requirements\\(e.g. skills, infrastructure, tools, equipment)\\
+    \bulletPoint The Project Stakeholders Analysis and Governance Structure and Roles\\
+    \bulletPoint Resources’ Availability\\
+    \bulletPoint Trade-off between tasks Time and Resources (an iterative process)\\
+    \bulletPoint Personalities, Experience, Group Dynamics, People Growth\\
+    \bulletPoint Related Risks
 
-\newpage
+    Key Question: How will I get the best resources and use who I have as best as I can?
 
-Example Resource Requirements Analysis
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=\linewidth]{resource_requirements_analysis.png}
-\end{figure}
+    Example Resource Requirements Analysis
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=\linewidth]{resource_requirements_analysis.png}
+    \end{figure}
+
+  \end{minipage}}
 
 \subsection{Responsibility Matrix}
 or RACI matrix
@@ -1080,10 +1134,13 @@ You can transfer responsibility but not accountability
 
 \subsection{Resource Gantt Chart}
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=20em]{resource_gantt_chart.png}
-\end{figure}
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=20em]{resource_gantt_chart.png}
+    \end{figure}
+  \end{minipage}}
 
 A gantt chart that also shows the resources working on the task
 
@@ -1099,15 +1156,20 @@ schedule requires over time
 \end{figure}
 
 \subsection{Resource Loading Table}
-Item in red indicates resource overallocation
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
 
-Resource Leveling: resolving resource conflicts (incl. overallocation) or achieving a smoother distribution of
-resources (mainly by delaying tasks based on their slack)
+    Item in red indicates resource overallocation
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=\linewidth]{resource_loading_table.png}
-\end{figure}
+    Resource Leveling: resolving resource conflicts (incl. overallocation) or achieving a smoother distribution of
+    resources (mainly by delaying tasks based on their slack)
+
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=\linewidth]{resource_loading_table.png}
+    \end{figure}
+
+  \end{minipage}}
 
 \newpage
 
@@ -1134,11 +1196,15 @@ Communications Plan: a document that describes project communications. Addresses
 
 Answers the questions: What (information), Where (it will come from), Who, When?
 
-Communications Plan Sample Template:
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=\linewidth]{communications_plan_sample.png}
-\end{figure}
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
+    Communications Plan Sample Template:
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=\linewidth]{communications_plan_sample.png}
+    \end{figure}
+
+  \end{minipage}}
 
 \newpage
 
@@ -1239,11 +1305,14 @@ Risks should be specific, e.g. of the form: If <event> when <point in project> t
 The primary output are relevant entries in a Risk Register (or else known as Risk Log
 (Prince2))
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=\linewidth]{risk_register.png}
-  \includegraphics[width=30em]{risk_register_prince2.png}
-\end{figure}
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=\linewidth]{risk_register.png}
+      \includegraphics[width=30em]{risk_register_prince2.png}
+    \end{figure}
+  \end{minipage}}
 
 \newpage
 
@@ -1388,11 +1457,16 @@ reference point in the development of the end outcome, e.g. a system version rea
 end-users. Release Management mainly concerns planning, preparing and tracking product versions for
 release.
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=\linewidth]{codelines_and_baselines.png}
-  \includegraphics[width=\linewidth]{configuration_management.png}
-\end{figure}
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
+
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=\linewidth]{codelines_and_baselines.png}
+      \includegraphics[width=\linewidth]{configuration_management.png}
+    \end{figure}
+
+  \end{minipage}}
 
 \newpage
 
@@ -1423,12 +1497,15 @@ Changes formally originate via formal Change Requests (CR). The set of CRs are m
 
 \newpage
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=\linewidth]{change_request_form.png}
-  \includegraphics[width=\linewidth]{change_requests_log.png}
-  \includegraphics[width=\linewidth]{project_issue_log.png}
-\end{figure}
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=\linewidth]{change_request_form.png}
+      \includegraphics[width=\linewidth]{change_requests_log.png}
+      \includegraphics[width=\linewidth]{project_issue_log.png}
+    \end{figure}
+  \end{minipage}}
 
 Note: Each organization/project typically has its own concrete change management process, with
 associated roles, responsibilities, tasks and document templates
@@ -1568,11 +1645,16 @@ One may produce an earned value chart to track project performance, i.e. example
   \includegraphics[width=.7\linewidth]{EVM chart.png}
 \end{figure}
 
-Concrete Numbers for the EV Graph;
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{EVM chart calcs.png}
-\end{figure}
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
+
+    Concrete Numbers for the EV Graph;
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=\linewidth]{EVM chart calcs.png}
+    \end{figure}
+
+  \end{minipage}}
 
 The vertical line between May and June shows that we are calculating the end
 value at the end of May. We can see the effect of being behind schedule for the
@@ -1588,37 +1670,42 @@ by setting a global rate.
 
 In scrum/agile, we have some control performance mechanisms
 
-\subsubsection{Velocity}
-Cumulative running average of the Story Points delivered in a number of Sprints
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
 
-Story points are from activities like planning poker
+    \subsubsection{Velocity}
+    Cumulative running average of the Story Points delivered in a number of Sprints
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{velocity.png}
-\end{figure}
+    Story points are from activities like planning poker
 
-\subsubsection{Burndown Charts}
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=\linewidth]{velocity.png}
+    \end{figure}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{burdown chart.png}
-\end{figure}
+    \subsubsection{Burndown Charts}
 
-Here we can see that the team will probably have to continue the current user
-stories in the next sprint. If this continues, the team will be behind schedule.
-At that point we consult the project triangle to increase costs or add people, etc.
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=\linewidth]{burdown chart.png}
+    \end{figure}
 
-\section{High-Level Summary of Best Practices}
-1. Decide and communicate how you are going to control change, track status and manage issues.\\
-(is it going to be a very formal change management process? why? what can everyone (like stakeholders) expect when there are changes? etc.)\\
-2. Decide what you will measure.\\
-3. Decide how you will measure.\\
-4. Risk Control/Management is a key success factor. Evaluate and be proactive!\\
-5. Options available are often based on the project triangle\\
-6. Quantify options/decisions whenever possible. (be careful of blame games in industry!)\\
-7. Recommend and Engage stakeholders Vs Decide\\
-(If you make decisions that are not wanted, stakeholders may ask you to repeat work you just did. Over and over until they feel like it is right. It is best you engage them in a timely fashion instead, verifying recommendations by other people in the project, ensuring any challenge to a decision is only a challenge to the process)
+    Here we can see that the team will probably have to continue the current user
+    stories in the next sprint. If this continues, the team will be behind schedule.
+    At that point we consult the project triangle to increase costs or add people, etc.
+
+    \section{High-Level Summary of Best Practices}
+    1. Decide and communicate how you are going to control change, track status and manage issues.\\
+    (is it going to be a very formal change management process? why? what can everyone (like stakeholders) expect when there are changes? etc.)\\
+    2. Decide what you will measure.\\
+    3. Decide how you will measure.\\
+    4. Risk Control/Management is a key success factor. Evaluate and be proactive!\\
+    5. Options available are often based on the project triangle\\
+    6. Quantify options/decisions whenever possible. (be careful of blame games in industry!)\\
+    7. Recommend and Engage stakeholders Vs Decide\\
+    (If you make decisions that are not wanted, stakeholders may ask you to repeat work you just did. Over and over until they feel like it is right. It is best you engage them in a timely fashion instead, verifying recommendations by other people in the project, ensuring any challenge to a decision is only a challenge to the process)
+
+  \end{minipage}}
 
 \chapter{Fundamentals of Team Management}
 
@@ -1869,100 +1956,115 @@ Observe, reflect, improve.
   You can plot your tasks on a chart like this and then decide to work on the most important \& urgent tasks first, then the most urgent, etc.
 \end{figure}
 
-\underline{Best Practices}
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
 
-1. Goals alignment, breakdown to Tasks, Planning, Logging/Analysing, Observe/Reflect/Improve (the framework above)
+    \underline{Best Practices}
 
-2. Keep a “To-Do” List and a Schedule (with some free time to allow for flexibility/unexpected events)
+    1. Goals alignment, breakdown to Tasks, Planning, Logging/Analysing, Observe/Reflect/Improve (the framework above)
 
-3. Develop some habits that boost your efficiency (e.g., taking the first hour of the day to reply to all emails from the previous day)
+    2. Keep a “To-Do” List and a Schedule (with some free time to allow for flexibility/unexpected events)
 
-4. Avoid procrastination and reward yourself for achieving goals. It’s always better to start a task…
+    3. Develop some habits that boost your efficiency (e.g., taking the first hour of the day to reply to all emails from the previous day)
 
-5. Avoid destructions and interruptions. Focus!
+    4. Avoid procrastination and reward yourself for achieving goals. It’s always better to start a task…
 
-6. Take breaks! (to refresh your mind)
+    5. Avoid destructions and interruptions. Focus!
 
-7. Delegate. (Can save you a lot of time!)
+    6. Take breaks! (to refresh your mind)
 
-8. Learn to say “No”. (Ensure scope is only as large as it needs to be)
+    7. Delegate. (Can save you a lot of time!)
 
-9. Mentor colleagues to bring you problems accompanied with proposals for solutions. Not merely problems!
+    8. Learn to say “No”. (Ensure scope is only as large as it needs to be)
 
-10. Prioritize (first things first) (e.g. quadrant of Urgent Vs Important tasks/activities) ("When everything is urgent, nothing is important")
+    9. Mentor colleagues to bring you problems accompanied with proposals for solutions. Not merely problems!
 
-11. Consult others on their practices and make sure you respect their time!
+    10. Prioritize (first things first) (e.g. quadrant of Urgent Vs Important tasks/activities) ("When everything is urgent, nothing is important")
 
-12. Manage your Energy!
+    11. Consult others on their practices and make sure you respect their time!
+
+    12. Manage your Energy!
+
+  \end{minipage}}
 
 \section{Meetings Management}
 
-There exist various types of meetings, e.g. to share information, to resolve a problem, to make
-decisions.
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
 
-In most cases, there are a number of Questions and Best Practices that are applicable.
+    There exist various types of meetings, e.g. to share information, to resolve a problem, to make
+    decisions.
 
-\underline{Before the Meeting}
+    In most cases, there are a number of Questions and Best Practices that are applicable.
 
-\bulletPoint “To call or not to call”? (Do you actually need a meeting?)
+    \underline{Before the Meeting}
 
-\bulletPoint  An appropriately designed Agenda is a key success factor (should include sufficient time, appropriate venue, well
-defined goals and concrete items with designated time) (Meetings should have predefined items to discuss)
+    \bulletPoint “To call or not to call”? (Do you actually need a meeting?)
 
-\bulletPoint  Who to invite? (power to decide, have required info, have a role/interest in the topic, should be aware of
-outcomes/facts to be presented, may be assigned actions)\\
-people have a tendency to assign actions to people that are not in the
-meeting (e.g., if they skipped it or weren't told about it), so you should
-always attend if you suspect that you will be assigned an action, and react if
-you disagree with the action
+    \bulletPoint  An appropriately designed Agenda is a key success factor (should include sufficient time, appropriate venue, well
+    defined goals and concrete items with designated time) (Meetings should have predefined items to discuss)
 
-\bulletPoint  How many shall I invite? \\
-(if you have to resolve a problem or make a decision, more than 8 participants may be an issue (they are not usually productive due to too much disagreement, too many people saying different things, lack of focus, etc.))\\
-(If you are just sharing information, you could have 100s of people, it does not matter)
+    \bulletPoint  Who to invite? (power to decide, have required info, have a role/interest in the topic, should be aware of
+    outcomes/facts to be presented, may be assigned actions)\\
+    people have a tendency to assign actions to people that are not in the
+    meeting (e.g., if they skipped it or weren't told about it), so you should
+    always attend if you suspect that you will be assigned an action, and react if
+    you disagree with the action
 
-\bulletPoint  Organize and test the meeting venue conditions in advance! (lights, projector, paper, etc.)
+    \bulletPoint  How many shall I invite? \\
+    (if you have to resolve a problem or make a decision, more than 8 participants may be an issue (they are not usually productive due to too much disagreement, too many people saying different things, lack of focus, etc.))\\
+    (If you are just sharing information, you could have 100s of people, it does not matter)
 
-\bulletPoint  Prepare yourself in advance (relevant documents/facts, communicate agenda and background material beforehand,
-inform your boss or others who will not attend but are interested)
+    \bulletPoint  Organize and test the meeting venue conditions in advance! (lights, projector, paper, etc.)
 
-\bulletPoint  Decide on “How shall we decide”? (majority, unanimous, leader?) Which is better?
+    \bulletPoint  Prepare yourself in advance (relevant documents/facts, communicate agenda and background material beforehand,
+    inform your boss or others who will not attend but are interested)
 
-\underline{During the Meeting}
+    \bulletPoint  Decide on “How shall we decide”? (majority, unanimous, leader?) Which is better?
 
-\bulletPoint Start at the time scheduled. Do not wait!\\
-There is only one case in which you should wait - if a decision maker has not arrived yet in the meeting and they are the singular person who can make a decision for the meeting\\
-Ask for permission to record the meeting
+    \underline{During the Meeting}
 
-\bulletPoint If people do not know each other, allow time to introduce themselves
+    \bulletPoint Start at the time scheduled. Do not wait!\\
+    There is only one case in which you should wait - if a decision maker has not arrived yet in the meeting and they are the singular person who can make a decision for the meeting\\
+    Ask for permission to record the meeting
 
-\bulletPoint The first action is to remind the topic, goals and the agenda items (and allow for possible reasonable adaptations)
+    \bulletPoint If people do not know each other, allow time to introduce themselves
 
-\bulletPoint Discuss/decide any applicable rules (e.g. how to decide, timings, who will speak, decide on breaks in long meetings)
+    \bulletPoint The first action is to remind the topic, goals and the agenda items (and allow for possible reasonable adaptations)
 
-\bulletPoint Follow the agenda, do not allow irrelevant topics. Focus!\\
-If something is useful, you can organize another meeting to discuss it. Do not let it take over the current one
+    \bulletPoint Discuss/decide any applicable rules (e.g. how to decide, timings, who will speak, decide on breaks in long meetings)
 
-\bulletPoint Facilitate/encourage participation and consensus, ask questions, be the “devils advocate”, exercise “Active Listening”, regularly
-provide a synopsis of what has been discussed/decided.
+    \bulletPoint Follow the agenda, do not allow irrelevant topics. Focus!\\
+    If something is useful, you can organize another meeting to discuss it. Do not let it take over the current one
 
-\bulletPoint Build on positive aspects or items of agreement to continue.
+    \bulletPoint Facilitate/encourage participation and consensus, ask questions, be the “devils advocate”, exercise “Active Listening”, regularly
+    provide a synopsis of what has been discussed/decided.
 
-\bulletPoint Do not permit interruptions or somebody dominating. Prevent/disallow interpersonal conflicts or disruptive behavior.
+  \end{minipage}}
 
-\bulletPoint Use the board to keep notes and highlight key points (but do not exaggerate)
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
 
-\bulletPoint Keep track of time and progress to ensure the meeting is on-track. Try to finish on-time or ask permission if you wish to extend.
+    \bulletPoint Build on positive aspects or items of agreement to continue.
 
-\bulletPoint Before the end, summarize what has been decided and make sure there are decision and action items/plan, with clear
-responsibilities, schedules and review mechanisms!
+    \bulletPoint Do not permit interruptions or somebody dominating. Prevent/disallow interpersonal conflicts or disruptive behavior.
 
-\underline{After the Meeting}
+    \bulletPoint Use the board to keep notes and highlight key points (but do not exaggerate)
 
-\bulletPoint   Communicate appropriate Meeting Minutes (the notes from the meeting, meeting recording, etc.) in a timely manner.\\
-Add "If amendments need to be made, please let me know"\\
-Add "If I do not hear back from x date, then I will assume ... (everyone has agreed on what occurred)"
+    \bulletPoint Keep track of time and progress to ensure the meeting is on-track. Try to finish on-time or ask permission if you wish to extend.
 
-\bulletPoint   Reflect on your practices and aim to improve. If necessary, ask relevant participants on their views
+    \bulletPoint Before the end, summarize what has been decided and make sure there are decision and action items/plan, with clear
+    responsibilities, schedules and review mechanisms!
+
+    \underline{After the Meeting}
+
+    \bulletPoint   Communicate appropriate Meeting Minutes (the notes from the meeting, meeting recording, etc.) in a timely manner.\\
+    Add "If amendments need to be made, please let me know"\\
+    Add "If I do not hear back from x date, then I will assume ... (everyone has agreed on what occurred)"
+
+    \bulletPoint   Reflect on your practices and aim to improve. If necessary, ask relevant participants on their views
+
+  \end{minipage}}
 
 \section{Conflict Management}
 
@@ -1984,7 +2086,12 @@ decisions)\\
 \bulletPoint Interpersonal conflict – due to personality differences, sources may include behavioural styles, egos,
 ethics, personality traits, bias etc.
 
-3 Schools of Thought: Traditional (conflict is negative), Behavioural, Interactionist (Conflict is a means for society making progress)
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
+
+    3 Schools of Thought: Traditional (conflict is negative), Behavioural, Interactionist (Conflict is a means for society making progress)
+
+  \end{minipage}}
 
 Numerous Sources of conflict, for example:\\
 \bulletPoint Competition of scarce resources\\
@@ -2024,30 +2131,35 @@ result. Sometimes one may not know the full story (or history).
 5. Eliminate\\
 Remove conflicting party or parties from the project.
 
-\underline{Best Practices}
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
 
-1. Conflict is natural– it may even be an evidence of progress (but there is a limit).\\
-consider the different leadership approaches
+    \underline{Best Practices}
 
-2. Different “resolution” approaches are appropriate in different situations.
+    1. Conflict is natural– it may even be an evidence of progress (but there is a limit).\\
+    consider the different leadership approaches
 
-3. No interference may be a good approach– its not about being “lazy”. In any case, carefully Plan the way
-to intervene.
+    2. Different “resolution” approaches are appropriate in different situations.
 
-4. Learn to deal with your own conflicts and emotions constructively (in order to deal effectively with other
-people conflicts).
+    3. No interference may be a good approach– its not about being “lazy”. In any case, carefully Plan the way
+    to intervene.
 
-5. Dealing with human emotions is usually more effective than rational argumentation.
+    4. Learn to deal with your own conflicts and emotions constructively (in order to deal effectively with other
+    people conflicts).
 
-6. Important to achieve that each party strives to experience “reality” using the other party’s “lenses” and
-to focus on the other party’s emotions and concerns.
+    5. Dealing with human emotions is usually more effective than rational argumentation.
 
-7. Encourage “Active Listening”.
+    6. Important to achieve that each party strives to experience “reality” using the other party’s “lenses” and
+    to focus on the other party’s emotions and concerns.
 
-8. 5-Why analysis. Beware of faulty assumptions and explore underlying motives. Accept and explore the
-possibility that something that you (as PM) do (or do not do) may be the source of the conflict.
+    7. Encourage “Active Listening”.
 
-9. Better to strive for Collaborative “Win-Win” solutions
+    8. 5-Why analysis. Beware of faulty assumptions and explore underlying motives. Accept and explore the
+    possibility that something that you (as PM) do (or do not do) may be the source of the conflict.
+
+    9. Better to strive for Collaborative “Win-Win” solutions
+
+  \end{minipage}}
 
 \chapter{Fundamentals of Project Quality Management}
 
@@ -2164,11 +2276,20 @@ in the project to:\\
 \bulletPoint Identify ways of eliminating causes of unsatisfactory performance (for example, by introducing process
 improvements as a result of lessons learned).”
 
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
+
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=\linewidth]{quality_reg.png}
+
+      Quality Register (Prince2)
+    \end{figure}
+
+  \end{minipage}}
+
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{quality_reg.png}
-
-  Quality Register (Prince2)\\
   “Summarize all the quality management activities that are planned or have taken place, and provides
   information for the end stage reports and end project report.”
 \end{figure}
@@ -2227,6 +2348,9 @@ The plan should also include a definition of the quality
 assessment process, an agreed way of assessing/measuring whether desired quality attributes are present
 in the product.
 
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
+
 Attributes include;\\
 \begin{minipage}[]{.3\linewidth}
   \bulletPoint Safety\\
@@ -2252,9 +2376,14 @@ Attributes include;\\
   \bulletPoint Learnability
 \end{minipage}
 
+\end{minipage}}
+
 \newpage
 
 \subsection{Quality Standards}
+
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
 
 Definition (ISO): ”requirements, specifications, guidelines or characteristics that can be used consistently to
 ensure that materials, products, processes and services are fit for their purpose.” Guidance Vs Requirements
@@ -2284,9 +2413,14 @@ organization and industry (and may be “certified”).
 There are various levels of quality up to the organization
 level
 
+\end{minipage}}
+
 \newpage
 
 \subsection{Continuous Process Improvement Process}
+
+\noindent\fcolorbox{pink}{lightgray}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax}
 
 Acrucial requirement/characteristic/attribute. Part of overall Total Quality Management (TQM).
 
@@ -2321,6 +2455,8 @@ Plan; identify the problem \& analyze it\\
 Do; find the solution or a potential solution\\
 Check; evaluate the results \& see if the solution works\\
 Act; determine the next steps
+
+\end{minipage}}
 
 \end{document}
 \end{article}
